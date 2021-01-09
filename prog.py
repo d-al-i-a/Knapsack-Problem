@@ -31,11 +31,11 @@ def SelectObjets(W, Wi, Vi, n):
 '''
 Vi = [1, 4, 5, 7] #tableau des gains Vi
 Wi = [1, 3, 4, 5] #tableau des poids Wi
-W = 7   
+W = 7 
 n = len(Vi) 
 '''
 n = int(input("Combien d'objets y a-t-il ? "))
-W = int(input("Quel est le poid maximal du sac à dos ? "))
+W = int(input("Quel est le poids maximal du sac à dos ? "))
 Wi = [0 for x in range(n)]
 Vi = [0 for x in range(n)]
 for i in range(n):
