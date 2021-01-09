@@ -22,7 +22,7 @@ def SacADos(W, wt, val, n):
         else:
             print("L'objet avec le poids = ",wt[p-1]," et le gain = ",val[p-1]," est ajouté au sac à dos")
             q=q-wt[p-1]
-
+            p-= 1
     
     return K[n][W] 
   
