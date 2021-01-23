@@ -1,11 +1,20 @@
 # Une solution en programmation dynamique pour le probléme du Sac à Dos (avec interface graphique)
 from tkinter import *
+from PIL import Image, ImageTk
 root = Tk(className=' TP1 TPRO - Problème Du Sac À Dos')
-root.geometry("1000x700")
+root.geometry("1100x780")
 root.configure(background='#BEE5D3')
 #On récupère  le poid maximal et le nombre des objets 
 TitleLabel= Label(root,text="Solution au Problème du Sac à Dos ",font=("Times New Roman", 14), bg='#BEE5D3' )
 TitleLabel.grid(row=0,column=1,pady=(20, 15),padx=(5,0))
+
+image = Image.open(r"image.png")
+image = image.resize((450, 200), Image.ANTIALIAS)
+photo = ImageTk.PhotoImage(image)
+labelp = Label(root, image = photo, bg='#BEE5D3')
+labelp.image = photo
+labelp.grid(row = 0, column = 3, rowspan = 4, columnspan = 10, padx=(50,0))
+
 Title2Label= Label(root,text="(Programmation Dynamique) ",font=("Times New Roman", 14), bg='#BEE5D3'   )
 Title2Label.grid(row=0,column=2,pady=(20, 15))
 indice=1
