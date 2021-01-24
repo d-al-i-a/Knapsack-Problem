@@ -2,7 +2,7 @@
 from tkinter import *
 from PIL import Image, ImageTk
 root = Tk(className=' TP1 TPRO - Problème Du Sac À Dos')
-root.geometry("1100x780")
+root.geometry("1160x790")
 root.configure(background='#BEE5D3')
 #On récupère  le poid maximal et le nombre des objets 
 TitleLabel= Label(root,text="Solution au Problème du Sac à Dos ",font=("Times New Roman", 14), bg='#BEE5D3' )
@@ -51,11 +51,13 @@ def addElements():
 
 #Fonction appelée quand on clique sur le button d'insertion d'objets 
 def clickedElements():
+    afficherElements.grid_forget()  # disparition si ca plait pas a enlever
     n=int(numberEntry.get())
     W=int(maxPoidEntry.get())
     Wi,Vi= addElements()
     #Fonction appelée quand on clique sur le button d'affichage du gain maximal du sac à dos   
     def clickMaxGain():
+        #afficherGain.grid_forget()  # disparition
         We = [0 for x in range(n)]
         Ve = [0 for x in range(n)]
         for object in range(n):
@@ -96,7 +98,7 @@ def clickedElements():
         maxlabel.grid(row=indiceRes,column=1,pady=(5, 5))
     # Button pour afficher le gain maximal du sac à dos et son contenu (objets selectionés)  
     afficherGain= Button(root,text="Afficher le gain maximal",font=("Times New Roman", 12),command=clickMaxGain, borderwidth = '4', width = 25,bg='white' )
-    afficherGain.grid(row=indice+n+2,column=2,pady=(5, 5))
+    afficherGain.grid(row=indice+n+2,column=2,pady=(5, 15))
 
  # Button pour afficher un tableau à remplir avec les poids et gains des objets   
 afficherElements= Button(root,text="Inserer les objects",font=("Times New Roman", 12),command=clickedElements, borderwidth = '4', width = 25,bg='white')
