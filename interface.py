@@ -2,6 +2,9 @@
 from tkinter import *
 from PIL import Image, ImageTk
 root = Tk(className=' TP1 TPRO - Problème Du Sac À Dos')
+
+
+
 root.geometry("1160x790")
 root.configure(background='#BEE5D3')
 #On récupère  le poid maximal et le nombre des objets 
@@ -57,7 +60,7 @@ def clickedElements():
     Wi,Vi= addElements()
     #Fonction appelée quand on clique sur le button d'affichage du gain maximal du sac à dos   
     def clickMaxGain():
-        #afficherGain.grid_forget()  # disparition
+        afficherGain.grid_forget()  # disparition
         We = [0 for x in range(n)]
         Ve = [0 for x in range(n)]
         for object in range(n):
